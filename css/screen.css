@@ -1,0 +1,226 @@
+html,
+body {
+    background: #fff;
+    font-family: Raleway, Arial, Verdana, sans-serif;
+    font-size: 18px;
+    line-height: 1.6em;
+    font-weight: 100;
+    color: #999;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+p {
+    font-family: Lato, sans-serif;
+    margin: 0 0 15px 0;
+    padding: 0 30px;
+    color: #666;
+    font-size: 1.3em;
+    font-weight: 300;
+    line-height: 1.8em;
+}
+
+a {
+    position: relative;
+    color: inherit;
+    display: inline-block;
+    text-decoration: none;
+    transition: left .3s ease-out;
+    text-decoration: underline;
+    text-decoration-skip: ink;
+}
+
+a:hover {
+    text-decoration-color: #00ADA7;
+}
+
+[data-tooltip]:hover::before {
+    content: '';
+    position: absolute;
+    bottom: calc(100% - 7px);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 7px solid #00ADA7;
+}
+
+[data-tooltip]:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 5px 20px;
+    font-size: 0.6em;
+    line-height: 1em;
+    text-decoration: none;
+    color: #fff;
+    background-color: #00ADA7;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 802px;
+    margin: 0px auto;
+    padding: 40px 0 0 0;
+}
+
+.web .wrapper {
+    max-width: 1280px;
+}
+
+.main-image {
+    position: relative;
+    width: 100%;
+    max-width: 802px;
+    height: auto;
+    margin: 0 0 30px 0;
+    background-size: cover;
+    padding: 25px 25px 56% 25px;
+    border: 1px solid #eee;
+    background: none;
+}
+
+.main-image img {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    display: block;
+    width: calc(100% - 50px);
+    height: auto;
+    z-index: 5;
+}
+
+.main-image::before,
+.main-image::after {
+    content: '';
+    position: absolute;
+    background: #fff;
+}
+
+.main-image::before {
+    width: calc(100% + 50px + 2px - 120px);
+    height: calc(100% + 2px);
+    top: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.main-image::after {
+    height: calc(100% + 50px + 2px - 120px);
+    width: calc(100% + 2px);
+    left: -1px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.cp_embed_iframe {
+    margin-bottom: 60px;
+}
+
+.title {
+    font-family: Raleway, sans-serif;
+    font-weight: 100;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1.6em;
+    margin: 0 0 30px 0;
+}
+
+.title.alpha {
+    font-size: 2.1em;
+    letter-spacing: 0.4em;
+    color: #999;
+}
+
+.social {
+    display: block;
+    text-align: center;
+    margin: 60px 0 10px 0;
+    padding: 0;
+    list-style: none;
+    font-size: 0;
+}
+
+.social li {
+    position: relative;
+    display: inline-block;
+    margin: 0 0 2px 0;
+    padding: 0;
+    font-size: 18px;
+    vertical-align: top;
+    font-weight: 300;
+    z-index: 5;
+}
+
+.social li a {
+    text-decoration: none;
+    overflow: visible;
+}
+
+.social li:not(:last-child) {
+    margin-right: 4px;
+}
+
+.social li a {
+    display: block;
+    color: #666;
+    text-transform: uppercase;
+    font-size: 0.7em;
+    padding: 0 15px;
+    z-index: 20;
+}
+
+.social li a:hover {
+    color: #000;
+    text-decoration: underline;
+}
+
+body.malware-origin::before {
+    display: block;
+    content: 'My site was recently compromised and had malicious code injected in it. The link that directed you here was malware and you should report the sender. I hope you were not negatively impacted by the malicious content.';
+    background-color: red;
+    color: #fff;
+    font-size: 0.8em;
+    font-weight: 500;
+    padding: 15px;
+    line-height: 1em;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 750px) {
+    .content {
+        width: 100%;
+        padding: 0 5%;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .wrapper {
+        padding-top: 30px;
+    }
+    .title.alpha {
+        font-size: 1.6em;
+    }
+    .social li a {
+        padding: 5px 25px;
+    }
+}
